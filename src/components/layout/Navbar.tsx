@@ -1,6 +1,6 @@
 /**
  * Navbar.tsx
- * Main navigation component with user info and gamification badges
+ * Main navigation component with user info, gamification badges, and theme toggle
  */
 
 import { Link, useNavigate } from 'react-router-dom';
@@ -22,6 +22,7 @@ import { useProfile } from '@/hooks/useProfile';
 import { XPBadge } from '@/components/gamification/XPBadge';
 import { StreakBadge } from '@/components/gamification/StreakBadge';
 import { LevelBadge } from '@/components/gamification/LevelBadge';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 export const Navbar = () => {
   const { user, signOut } = useAuth();
@@ -36,13 +37,13 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-lg">
+    <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <motion.div
-            whileHover={{ rotate: 10 }}
-            className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary"
+            whileHover={{ rotate: 10, scale: 1.05 }}
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg"
           >
             <BookOpen className="h-5 w-5 text-primary-foreground" />
           </motion.div>
@@ -70,10 +71,18 @@ export const Navbar = () => {
               </div>
 
               {/* Create course button */}
-              <Button variant="hero" size="sm" onClick={() => navigate('/create-course')}>
+              <Button 
+                variant="hero" 
+                size="sm" 
+                onClick={() => navigate('/create-course')}
+                className="btn-glow"
+              >
                 <Plus className="h-4 w-4" />
                 New Course
               </Button>
+
+              {/* Theme toggle */}
+              <ThemeToggle />
 
               {/* Logout */}
               <Button variant="ghost" size="icon" onClick={handleLogout}>
@@ -82,10 +91,13 @@ export const Navbar = () => {
             </>
           ) : (
             <div className="flex items-center gap-3">
+              {/* Theme toggle */}
+              <ThemeToggle />
+              
               <Button variant="ghost" onClick={() => navigate('/login')}>
                 Log In
               </Button>
-              <Button variant="hero" onClick={() => navigate('/signup')}>
+              <Button variant="hero" onClick={() => navigate('/signup')} className="btn-glow">
                 Get Started
               </Button>
             </div>
@@ -93,14 +105,16 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile menu button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </Button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -109,7 +123,7 @@ export const Navbar = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="border-t border-border bg-background md:hidden"
+          className="border-t border-border/50 bg-background/95 backdrop-blur-xl md:hidden"
         >
           <div className="container mx-auto space-y-4 px-4 py-4">
             {user ? (
@@ -128,7 +142,7 @@ export const Navbar = () => {
                   <MobileNavLink to="/profile" icon={User} label="Profile" onClick={() => setMobileMenuOpen(false)} />
                 </div>
 
-                <Button variant="hero" className="w-full" onClick={() => { navigate('/create-course'); setMobileMenuOpen(false); }}>
+                <Button variant="hero" className="w-full btn-glow" onClick={() => { navigate('/create-course'); setMobileMenuOpen(false); }}>
                   <Plus className="h-4 w-4" />
                   New Course
                 </Button>
@@ -143,7 +157,7 @@ export const Navbar = () => {
                 <Button variant="outline" className="w-full" onClick={() => navigate('/login')}>
                   Log In
                 </Button>
-                <Button variant="hero" className="w-full" onClick={() => navigate('/signup')}>
+                <Button variant="hero" className="w-full btn-glow" onClick={() => navigate('/signup')}>
                   Get Started
                 </Button>
               </div>

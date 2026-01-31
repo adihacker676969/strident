@@ -28,8 +28,8 @@ const buttonVariants = cva(
         // Link style
         link: "text-primary underline-offset-4 hover:underline",
         
-        // Hero button - prominent gradient style for CTAs
-        hero: "bg-gradient-to-r from-primary to-[hsl(168,76%,36%)] text-primary-foreground shadow-lg hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] font-bold",
+        // Hero button - prominent gradient style for CTAs (purple to blue)
+        hero: "bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] font-bold",
         
         // Success button for positive actions
         success: "bg-studyflow-success text-primary-foreground hover:bg-studyflow-success/90 shadow-sm",
