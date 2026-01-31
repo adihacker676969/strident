@@ -1,6 +1,7 @@
 /**
  * Login.tsx
  * Login page with email/password authentication
+ * Updated with purple-blue gradient and glassmorphism
  */
 
 import { useState } from 'react';
@@ -12,6 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -51,13 +53,24 @@ const Login = () => {
   return (
     <div className="flex min-h-screen">
       {/* Left side - Form */}
-      <div className="flex flex-1 flex-col justify-center px-8 py-12 lg:px-12">
+      <div className="flex flex-1 flex-col justify-center px-8 py-12 lg:px-12 relative">
+        {/* Background gradient */}
+        <div className="absolute inset-0 gradient-bg-animated opacity-50 -z-10" />
+        
+        {/* Theme toggle */}
+        <div className="absolute top-4 right-4">
+          <ThemeToggle />
+        </div>
+
         <div className="mx-auto w-full max-w-sm">
           {/* Logo */}
           <Link to="/" className="mb-8 flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+            <motion.div 
+              whileHover={{ rotate: 10, scale: 1.05 }}
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent shadow-lg"
+            >
               <BookOpen className="h-5 w-5 text-primary-foreground" />
-            </div>
+            </motion.div>
             <span className="font-display text-xl font-bold gradient-text">StudyFlow AI</span>
           </Link>
 
@@ -91,7 +104,7 @@ const Login = () => {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 bg-background/50 backdrop-blur-sm"
                   required
                 />
               </div>
@@ -108,7 +121,7 @@ const Login = () => {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 bg-background/50 backdrop-blur-sm"
                   required
                 />
               </div>
@@ -118,7 +131,7 @@ const Login = () => {
             <Button
               type="submit"
               variant="hero"
-              className="w-full"
+              className="w-full btn-glow"
               disabled={loading}
             >
               {loading ? (
@@ -147,7 +160,11 @@ const Login = () => {
 
       {/* Right side - Decorative */}
       <div className="hidden lg:block lg:flex-1">
-        <div className="relative h-full bg-gradient-to-br from-primary via-[hsl(168,76%,36%)] to-studyflow-info">
+        <div className="relative h-full bg-gradient-to-br from-primary via-accent to-studyflow-info overflow-hidden">
+          {/* Animated orbs */}
+          <div className="glow-orb w-96 h-96 bg-white/20 top-10 -left-20" />
+          <div className="glow-orb w-64 h-64 bg-white/10 bottom-20 right-10" style={{ animationDelay: '3s' }} />
+          
           {/* Pattern overlay */}
           <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -161,9 +178,13 @@ const Login = () => {
               transition={{ delay: 0.2 }}
               className="max-w-md text-center"
             >
-              <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm">
+              <motion.div 
+                className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
                 <BookOpen className="h-10 w-10" />
-              </div>
+              </motion.div>
               <h2 className="font-display text-3xl font-bold">
                 Continue Your Journey
               </h2>

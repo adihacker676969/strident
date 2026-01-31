@@ -80,6 +80,7 @@ export default {
       boxShadow: {
         'glow': 'var(--shadow-glow)',
         'card-hover': 'var(--shadow-card-hover)',
+        'glass': 'var(--shadow-glass)',
       },
       keyframes: {
         "accordion-down": {

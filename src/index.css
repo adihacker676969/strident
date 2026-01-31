@@ -4,125 +4,130 @@
 
 /* ============================================
    StudyFlow AI Design System
-   A playful, modern learning platform aesthetic
-   Inspired by Duolingo + Linear + Notion
+   Clean, minimal, high-end SaaS design
+   Purple-blue gradient theme with glassmorphism
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Core backgrounds */
-    --background: 150 30% 98%;
-    --foreground: 160 25% 10%;
+    /* Core backgrounds - Soft light with subtle purple tint */
+    --background: 240 20% 98%;
+    --foreground: 240 10% 10%;
 
     /* Cards and surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 160 25% 10%;
+    --card-foreground: 240 10% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 160 25% 10%;
+    --popover-foreground: 240 10% 10%;
 
-    /* Primary - Emerald/Green for growth and learning */
-    --primary: 158 64% 42%;
+    /* Primary - Purple gradient */
+    --primary: 250 70% 60%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Soft teal */
-    --secondary: 168 40% 92%;
-    --secondary-foreground: 160 25% 15%;
+    /* Secondary - Soft purple */
+    --secondary: 250 30% 95%;
+    --secondary-foreground: 250 40% 25%;
 
     /* Muted elements */
-    --muted: 150 20% 94%;
-    --muted-foreground: 160 15% 45%;
+    --muted: 240 10% 94%;
+    --muted-foreground: 240 10% 45%;
 
-    /* Accent - Warm amber for gamification highlights */
-    --accent: 38 92% 50%;
-    --accent-foreground: 38 80% 15%;
+    /* Accent - Blue for highlights */
+    --accent: 220 90% 56%;
+    --accent-foreground: 0 0% 100%;
 
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 150 20% 88%;
-    --input: 150 20% 88%;
-    --ring: 158 64% 42%;
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 250 70% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom StudyFlow colors */
+    /* Custom StudyFlow colors - Updated for purple-blue theme */
     --studyflow-success: 142 71% 45%;
     --studyflow-warning: 38 92% 50%;
-    --studyflow-info: 199 89% 48%;
+    --studyflow-info: 220 90% 56%;
     --studyflow-xp: 267 70% 55%;
     --studyflow-streak: 25 95% 53%;
-    --studyflow-level: 199 89% 48%;
+    --studyflow-level: 220 90% 56%;
     --studyflow-badge: 280 68% 55%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(158, 64%, 42%) 0%, hsl(168, 76%, 36%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(158, 64%, 42%) 0%, hsl(185, 80%, 35%) 50%, hsl(199, 89%, 48%) 100%);
+    /* Gradients - Purple to Blue */
+    --gradient-primary: linear-gradient(135deg, hsl(250, 70%, 60%) 0%, hsl(220, 90%, 56%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(260, 80%, 65%) 0%, hsl(240, 70%, 60%) 50%, hsl(220, 90%, 56%) 100%);
     --gradient-xp: linear-gradient(135deg, hsl(267, 70%, 55%) 0%, hsl(280, 68%, 55%) 100%);
     --gradient-streak: linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(38, 92%, 50%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(150, 30%, 98%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(160, 25%, 10%) 0%, hsl(170, 30%, 15%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(240, 20%, 98%) 100%);
+    --gradient-bg: linear-gradient(135deg, hsl(260, 60%, 97%) 0%, hsl(240, 40%, 96%) 50%, hsl(220, 60%, 97%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(160 25% 10% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(160 25% 10% / 0.08), 0 2px 4px -1px hsl(160 25% 10% / 0.04);
-    --shadow-lg: 0 10px 15px -3px hsl(160 25% 10% / 0.08), 0 4px 6px -2px hsl(160 25% 10% / 0.04);
-    --shadow-xl: 0 20px 25px -5px hsl(160 25% 10% / 0.1), 0 10px 10px -5px hsl(160 25% 10% / 0.04);
-    --shadow-glow: 0 0 20px hsl(158 64% 42% / 0.3);
-    --shadow-card-hover: 0 12px 24px -8px hsl(160 25% 10% / 0.12);
+    --shadow-sm: 0 1px 2px 0 hsl(240 10% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 10% / 0.08), 0 2px 4px -1px hsl(240 10% 10% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 10% / 0.08), 0 4px 6px -2px hsl(240 10% 10% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(240 10% 10% / 0.1), 0 10px 10px -5px hsl(240 10% 10% / 0.04);
+    --shadow-glow: 0 0 30px hsl(250 70% 60% / 0.35);
+    --shadow-card-hover: 0 12px 24px -8px hsl(250 70% 60% / 0.2);
+    --shadow-glass: 0 8px 32px 0 hsl(250 70% 60% / 0.1);
 
     /* Sidebar */
-    --sidebar-background: 150 25% 97%;
-    --sidebar-foreground: 160 25% 15%;
-    --sidebar-primary: 158 64% 42%;
+    --sidebar-background: 240 20% 97%;
+    --sidebar-foreground: 240 10% 15%;
+    --sidebar-primary: 250 70% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 168 40% 92%;
-    --sidebar-accent-foreground: 160 25% 15%;
-    --sidebar-border: 150 20% 88%;
-    --sidebar-ring: 158 64% 42%;
+    --sidebar-accent: 250 30% 95%;
+    --sidebar-accent-foreground: 250 40% 25%;
+    --sidebar-border: 240 10% 90%;
+    --sidebar-ring: 250 70% 60%;
   }
 
   .dark {
-    --background: 160 25% 6%;
-    --foreground: 150 30% 96%;
+    --background: 240 15% 8%;
+    --foreground: 240 10% 96%;
 
-    --card: 160 22% 9%;
-    --card-foreground: 150 30% 96%;
+    --card: 240 15% 12%;
+    --card-foreground: 240 10% 96%;
 
-    --popover: 160 22% 9%;
-    --popover-foreground: 150 30% 96%;
+    --popover: 240 15% 12%;
+    --popover-foreground: 240 10% 96%;
 
-    --primary: 158 70% 50%;
-    --primary-foreground: 160 25% 6%;
+    --primary: 250 75% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 20% 15%;
-    --secondary-foreground: 150 30% 96%;
+    --secondary: 240 15% 18%;
+    --secondary-foreground: 240 10% 96%;
 
-    --muted: 160 20% 15%;
-    --muted-foreground: 150 20% 55%;
+    --muted: 240 15% 18%;
+    --muted-foreground: 240 10% 55%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 38 80% 10%;
+    --accent: 220 90% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 160 20% 18%;
-    --input: 160 20% 18%;
-    --ring: 158 70% 50%;
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 250 75% 65%;
 
-    --sidebar-background: 160 22% 8%;
-    --sidebar-foreground: 150 30% 96%;
-    --sidebar-primary: 158 70% 50%;
-    --sidebar-primary-foreground: 160 25% 6%;
-    --sidebar-accent: 160 20% 15%;
-    --sidebar-accent-foreground: 150 30% 96%;
-    --sidebar-border: 160 20% 18%;
-    --sidebar-ring: 158 70% 50%;
+    --gradient-bg: linear-gradient(135deg, hsl(260, 30%, 12%) 0%, hsl(240, 25%, 10%) 50%, hsl(220, 35%, 12%) 100%);
+    --shadow-glow: 0 0 30px hsl(250 75% 65% / 0.25);
+    --shadow-glass: 0 8px 32px 0 hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 240 15% 10%;
+    --sidebar-foreground: 240 10% 96%;
+    --sidebar-primary: 250 75% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 15% 18%;
+    --sidebar-accent-foreground: 240 10% 96%;
+    --sidebar-border: 240 15% 20%;
+    --sidebar-ring: 250 75% 65%;
   }
 }
 
@@ -146,12 +151,34 @@
 }
 
 @layer components {
-  /* Glass morphism effect */
+  /* Glassmorphism effect - Premium glass cards */
   .glass {
-    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+    @apply bg-white/70 backdrop-blur-xl border border-white/30 shadow-lg;
   }
 
-  /* Gradient text */
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-xl border border-white/10 shadow-lg;
+  }
+
+  .dark .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  /* Premium glassmorphism cards */
+  .glass-card {
+    background: linear-gradient(135deg, hsla(0, 0%, 100%, 0.9) 0%, hsla(0, 0%, 100%, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(0, 0%, 100%, 0.4);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .dark .glass-card {
+    background: linear-gradient(135deg, hsla(240, 15%, 20%, 0.8) 0%, hsla(240, 15%, 15%, 0.6) 100%);
+    border: 1px solid hsla(0, 0%, 100%, 0.08);
+  }
+
+  /* Gradient text - Purple to Blue */
   .gradient-text {
     background: var(--gradient-hero);
     -webkit-background-clip: text;
@@ -181,13 +208,18 @@
   }
 
   .card-hover:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-card-hover);
   }
 
   /* Glow effect */
   .glow-primary {
     box-shadow: var(--shadow-glow);
+  }
+
+  /* Hero button glow on hover */
+  .btn-glow:hover {
+    box-shadow: 0 0 40px hsl(250 70% 60% / 0.4), 0 0 80px hsl(220 90% 56% / 0.2);
   }
 
   /* Progress bar animation */
@@ -223,8 +255,16 @@
     }
   }
 
-  /* Floating animation */
+  /* Floating animation - Multiple speeds */
   .float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-fast {
     animation: float 3s ease-in-out infinite;
   }
 
@@ -233,8 +273,13 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
     }
+  }
+
+  /* Parallax effect for mouse movement */
+  .parallax-container {
+    perspective: 1000px;
   }
 
   /* Shimmer effect for loading states */
@@ -285,6 +330,49 @@
     50% {
       transform: scale(1.05);
       filter: brightness(1.2);
+    }
+  }
+
+  /* Gradient background with animation */
+  .gradient-bg-animated {
+    background: var(--gradient-bg);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Soft glow orbs for background decoration */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: orbFloat 8s ease-in-out infinite;
+  }
+
+  @keyframes orbFloat {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(0) translateX(20px);
+    }
+    75% {
+      transform: translateY(20px) translateX(10px);
     }
   }
 }
